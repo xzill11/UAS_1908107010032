@@ -31,7 +31,7 @@ int sign_In(char user[30], char pass[30]){
     FILE *p;
     char user2[30], pass2[30];
 
-    p= fopen("users.txt", "r");
+    p= fopen("data/users.txt", "r");
 
 
     fscanf(p,"User: %s Password: %s",user2,pass2);
@@ -105,16 +105,16 @@ void tambah_siswa(){ //portal tambah siswa dan nilainya
 	FILE *ptr,*ptr1;
 	int count=0;
 	
-	ptr=fopen("siswa.txt","a");
+	ptr=fopen("data/siswa.txt","a");
 		system("cls");
-		ptr1 =fopen("siswa.txt","r");
+		ptr1 =fopen("data/siswa.txt","r");
 		while (fscanf (ptr1,"%d;%[^;];%[^;];%d;%f;%f;%f;%f;%f\n",&tambah.id,tambah.nama,tambah.jk,&tambah.kelas,&tambah.nilai[0],&tambah.nilai[1],&tambah.nilai[2],&tambah.nilai[3],&tambah.nilai[4])!=EOF)
 		{
 			tambah.id++;	
 		}
 		cek.id = tambah.id;
 		fclose(ptr1);
-		printf ("masukan nama siswa (pake '_' untuk spasi): ");fflush(stdin);
+		printf ("masukan nama siswa : ");fflush(stdin);
 		scanf ("%[^\n]",tambah.nama);
 		printf ("masukan JK siswa (L/P): ");fflush(stdin);
 		scanf ("%[^\n]",tambah.jk);
@@ -146,34 +146,11 @@ void tambah_siswa(){ //portal tambah siswa dan nilainya
         		goto add_invalid;
  		}
 }
-void index_nilai(){ //portal tambah nilai
-	if(tambah.nilai[4]>85 && tambah.nilai[4]<=100){
-		strcpy(index, "A");
-	}
-	else if(tambah.nilai[4]>75 && tambah.nilai[4]<=85){
-		strcpy(index, "B+");
-	}
-	else if(tambah.nilai[4]>65 && tambah.nilai[4]<=75){
-		strcpy(index, "B");
-	}
-	else if(tambah.nilai[4]>55 && tambah.nilai[4]<=65){
-		strcpy(index, "C+");
-	}
-	else if(tambah.nilai[4]>45 && tambah.nilai[4]<=55){
-		strcpy(index, "C");
-	}
-	else if(tambah.nilai[4]>30 && tambah.nilai[4]<=45){
-		strcpy(index, "D");
-	}
-	else if(tambah.nilai[4]>0 && tambah.nilai[4]<=30){
-		strcpy(index, "E");
-	}
-}
 void close(){
 }
 void tampil_siswa(){ //diplay data siswa keseluruhan
 	FILE *view;
-	view = fopen("siswa.txt","r");
+	view = fopen("data/siswa.txt","r");
 	int test=0;
 	system ("cls");
 	printf ("No\t\tNAMA\t\tJK\t\tkelas\t\tHARIAN\t\tKUIS\t\tULANGAN\t\tUJIAN\t\tRata-Rata\n");
@@ -212,7 +189,7 @@ void header(){ //cuma judul data, pake waktu biar bagus
 void hapus_siswa(){ //portal hapus data siswa pake no absen
 	FILE *lama, *baru;
 	int test=0;
-	lama = fopen("siswa.txt","r");
+	lama = fopen("data/siswa.txt","r");
 	baru = fopen("baru.txt","w");
 	system("cls");
 	printf("Input No. absen siswa yang akan di hapus : "); //hapus berdasarkan no absen
@@ -231,8 +208,8 @@ void hapus_siswa(){ //portal hapus data siswa pake no absen
 	}
 	fclose(lama);
 	fclose(baru);
-	remove("siswa.txt");
-	rename("baru.txt","siswa.txt");
+	remove("data/siswa.txt");
+	rename("baru.txt","data/siswa.txt");
 		if(test==0){
             printf("\nData tidak ditemukan !\a\a\a");
             erase_invalid:
@@ -267,7 +244,7 @@ void hapus_siswa(){ //portal hapus data siswa pake no absen
 void edit_siswa(){ //portal edit siswa
 	int pilih,test=0;
 	FILE *lama,*baru;
-	lama = fopen("siswa.txt","r");
+	lama = fopen("data/siswa.txt","r");
 	baru = fopen ("baru.txt","w");
 	system("cls");
 	
@@ -325,8 +302,8 @@ void edit_siswa(){ //portal edit siswa
 
 	fclose(lama);
 	fclose(baru);
-	remove("siswa.txt");
-	rename("baru.txt","siswa.txt");
+	remove("data/siswa.txt");
+	rename("baru.txt","data/siswa.txt");
 	if(test!=1){   
 		system("cls");
         printf("\nData tidak ditemukan !\a\a\a");
