@@ -55,7 +55,7 @@ int main(){
     sign_In(user, pass);
 
 }
-int mainn() //cuma buat bagus
+int mainn() //LOADING SYSTEM
 {
 	system("cls");
 		printf("Tunggu Bentar");
@@ -69,7 +69,7 @@ int mainn() //cuma buat bagus
 		printf(". ");
 		Sleep(500);
 		printf(". ");
-	menu(); //habis loding masuk kemenu
+	menu(); //habis loding masuk ke menu
 	return 0;
 }
 void menu(){
