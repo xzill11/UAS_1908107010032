@@ -31,7 +31,7 @@ int sign_In(char user[30], char pass[30]){ //sytem login
     FILE *p;
     char user2[30], pass2[30];
 
-    p= fopen("data/users.txt", "r");
+    p= fopen("data/users.txt", "r"); //difolder data, nama file login users
 
 
     fscanf(p,"User: %s Password: %s",user2,pass2);
@@ -58,7 +58,7 @@ int main(){ //proses login
 int mainn() //LOADING SYSTEM
 {
 	system("cls");
-		printf("Tunggu Bentar");
+		printf("Mohon Sabar");
 		Sleep(500);
 		printf(". ");
 		Sleep(500);
@@ -105,9 +105,9 @@ void tambah_siswa(){ //portal tambah siswa dan nilainya
 	FILE *ptr,*ptr1;
 	int count=0;
 	
-	ptr=fopen("data/siswa.txt","a");
+	ptr=fopen("data/siswa.txt","a"); //di folder data
 		system("cls");
-		ptr1 =fopen("data/siswa.txt","r");
+		ptr1 =fopen("data/siswa.txt","r"); // simpan file di folder data
 		while (fscanf (ptr1,"%d;%[^;];%[^;];%d;%f;%f;%f;%f;%f\n",&tambah.id,tambah.nama,tambah.jk,&tambah.kelas,&tambah.nilai[0],&tambah.nilai[1],&tambah.nilai[2],&tambah.nilai[3],&tambah.nilai[4])!=EOF)
 		{
 			tambah.id++;	
@@ -241,7 +241,7 @@ void hapus_siswa(){ //portal hapus data siswa pake no absen
     }
 	
 }
-void edit_siswa(){ //system edit data
+void edit_siswa(){ //system edit data menggunakan no absen 0 dan seterusnya
 	int pilih,test=0;
 	FILE *lama,*baru;
 	lama = fopen("data/siswa.txt","r");
