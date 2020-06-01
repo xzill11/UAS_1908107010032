@@ -135,7 +135,7 @@ void tambah_siswa(){ //portal tambah siswa dan nilainya
 	
 		printf("\n\nData siswa Sudah Disimpan !");
 		add_invalid:
-		printf("\n\n\tEnter 1 untuk menu utama dan 0 untuk keluar : ");
+		printf("\n\n\tEnter 1 untuk menu utama dan 0 untuk keluar : "); //skali klik no enter2
 		switch(getch()){
     		case '1': menu();
         		break;
