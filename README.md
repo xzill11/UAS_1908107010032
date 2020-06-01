@@ -4,4 +4,5 @@ Program seutuhnya dijalankan dengan sublime(windows) dan cmd
 
 ==CRUD DATA SISWA==
 - pasword dan user di simpan di folder data , dan disana updatenya
+- lihat user name dan pasword di users.txt
 - file siswa.txt tersimpan di folder data
