@@ -27,7 +27,7 @@ struct date{
 	int bln;
 	int thn;
 };
-int sign_In(char user[30], char pass[30]){
+int sign_In(char user[30], char pass[30]){ //sytem login
     FILE *p;
     char user2[30], pass2[30];
 
@@ -44,7 +44,7 @@ int sign_In(char user[30], char pass[30]){
         main();} //biar balek ke main klo salah
 
 }
-int main(){
+int main(){ //proses login
     char user[30], pass[30];
 
     printf("\nUser:");
@@ -72,7 +72,7 @@ int mainn() //LOADING SYSTEM
 	menu(); //habis loding masuk ke menu
 	return 0;
 }
-void menu(){
+void menu(){  //tampilan menu
 	int pilih;
 	menu:
 		system("cls");
@@ -179,7 +179,7 @@ void tampil_siswa(){ //diplay data siswa keseluruhan
         	goto list_invalid;
  	}
 }
-void header(){ //cuma judul data, pake waktu biar bagus
+void header(){ //cuma judul data & system waktu
 	printf("=== DATA SISWA ===");
 	time_t mytime;
 	time(&mytime);
@@ -187,7 +187,7 @@ void header(){ //cuma judul data, pake waktu biar bagus
 	
 }
 void hapus_siswa(){ //portal hapus data siswa pake no absen
-	FILE *lama, *baru;
+	FILE *lama, *baru; //proses open
 	int test=0;
 	lama = fopen("data/siswa.txt","r");
 	baru = fopen("baru.txt","w");
@@ -241,7 +241,7 @@ void hapus_siswa(){ //portal hapus data siswa pake no absen
     }
 	
 }
-void edit_siswa(){ //portal edit siswa
+void edit_siswa(){ //system edit data
 	int pilih,test=0;
 	FILE *lama,*baru;
 	lama = fopen("data/siswa.txt","r");
