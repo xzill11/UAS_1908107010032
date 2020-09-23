@@ -1,5 +1,6 @@
 # UAS_1908107010032_FAZILBASRI
 Program UAS Fazil Basri 1908107010032
+mk pemograman semster 2
 Program seutuhnya dijalankan dengan sublime(windows) dan cmd
 
 ==CRUD DATA SISWA==
