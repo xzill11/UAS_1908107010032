@@ -55,7 +55,7 @@ int main(){ //proses login
     sign_In(user, pass);
 
 }
-int mainn() //LOADING SYSTEM
+int mainn() //LOADING SYSTEM //menggukan sistem time
 {
 	system("cls");
 		printf("Mohon Sabar");
